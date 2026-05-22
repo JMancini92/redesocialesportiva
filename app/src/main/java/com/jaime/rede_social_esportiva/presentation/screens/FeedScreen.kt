@@ -59,7 +59,8 @@ import com.jaime.rede_social_esportiva.ui.theme.TextSecondary
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FeedScreen(
-    onLogout: () -> Unit = {}
+    onLogout: () -> Unit = {},
+    onNavigateToProfile: () -> Unit = {}
 ) {
     Scaffold(
         topBar = {
@@ -132,7 +133,7 @@ fun FeedScreen(
                             tint = TextSecondary
                         )
                     }
-                    IconButton(onClick = { }) {
+                    IconButton(onClick = onNavigateToProfile) {
                         Icon(
                             imageVector = Icons.Default.Person,
                             contentDescription = "Perfil",
